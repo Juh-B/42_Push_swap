@@ -1,13 +1,5 @@
 #include "../includes/push_swap.h"
 
-// static int	ft_list_size(t_list *lst)
-// {
-// 	if (lst == 0)
-// 		return (0);
-// 	else
-// 		return (1 + ft_list_size(lst->next));
-// }
-
 int	ft_lst_size(t_stack *lst)
 {
 	int	size;

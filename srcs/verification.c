@@ -1,6 +1,5 @@
 #include "../includes/push_swap.h"
 
-
 static int verify(t_stack *stack, char type)
 {
   int numb;
@@ -54,32 +53,6 @@ static int verif_args(int argc, char **argv)
   else
     return (3);
 }
-
-// int  create_stack(char **argv, t_stack *stack_a)
-// {
-//   int i;
-//   int *value;
-
-//   i = 1;
-//   while (argv[i])
-//   {
-//     if (verif_number(argv[i]))
-//     {
-//       value = malloc(sizeof(int));
-//       if (!value)
-//       {
-//         ft_free(stack_a);
-//         return (ft_error(2));
-//       }
-//       *value = ft_atoi(argv[i]);
-//       ft_stack(&stack_a, value);
-//     }
-//     else
-//       return (ft_error(2));
-//     i++;
-//   }
-//   return (3);
-// }
 
 int verifications(int argc, char **argv, t_stack **stack_a)
 {
