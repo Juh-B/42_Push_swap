@@ -35,6 +35,7 @@ void tiny_sort(t_stack **stack, t_stack **lst);
 void mov_cost(t_stack *stack, char c);
 void sort_stacks(t_stack **stack_a, t_stack **stack_b, t_stack **lst);
 void ft_move(t_stack **stack_a, t_stack **stack_b, t_stack *node_a, t_stack *node_b, t_stack **lst);
+t_stack	*ft_lst_last(t_stack *lst);
 t_stack *find_lowest(t_stack *stack);
 t_stack *find_highest(t_stack *stack);
 t_stack *calc_cost(t_stack *stack_orig, t_stack *stack_dest, char orig, char dest);

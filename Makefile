@@ -17,6 +17,7 @@ SRCS = $(SRCDIR)/push_swap.c\
 	$(SRCDIR)/fit_in.c\
 	$(SRCDIR)/ft_error.c\
 	$(SRCDIR)/ft_free.c\
+	$(SRCDIR)/ft_lst.c\
 	$(SRCDIR)/ft_stack.c\
 	$(SRCDIR)/low_or_hig_nbr.c\
 	$(SRCDIR)/mov_cost.c\

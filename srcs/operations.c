@@ -36,18 +36,12 @@ void rotate(t_stack **stack)
   t_stack *first;
   t_stack *second;
   t_stack *last;
-  t_stack *temp;
 
   if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
     return ;
   first = *stack;
   second = first->next;
-
-  temp = *stack;
-  while (temp->next)
-      temp = temp->next;
-  last = temp->next;
-  // last = ft_lstlast(*stack);
+  last = ft_lst_last(*stack);
   first->next = NULL;
   last->next = first;
   *stack = second;
