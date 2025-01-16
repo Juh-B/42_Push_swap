@@ -162,6 +162,21 @@ t_list	*ft_lstnew(void *content)
 	return (new_node);
 }
 
+// t_list	*ft_lstlast(t_list *lst)
+// {
+// 	t_list	*p;
+
+// 	if (lst == NULL)
+// 		return (NULL);
+// 	while (lst)
+// 	{
+// 		if (lst->next == NULL)
+// 			p = lst;
+// 		lst = lst->next;
+// 	}
+// 	return (p);
+// }
+
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (lst == NULL)
@@ -211,6 +226,7 @@ void create_stack(t_list **stack, void *content)
   t_list  *new_node;
 
   new_node = ft_lstnew(content);
+  // printf("new. %d\n", *(int *)new_node->content);
   if (new_node == NULL)
     return ;
   ft_lstadd_back(stack, new_node);
@@ -477,13 +493,43 @@ void  tiny_sort_reverse(t_list **stack, t_list **lst)
     create_stack(lst, "sb\n");
   }
 }
+  // printf("content. %d\ncontent next. %d\n", *(int *)(*stack)->content, *(int *)(*stack)->next->content);
 
 //.........QUICK SORT..................
+// int	ft_strncmp(const char *s1, const char *s2, size_t n)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	if (n == 0)
+// 		return (0);
+// 	while (i < n - 1 && s1[i] && s2[i])
+// 	{
+// 		if (s1[i] != s2[i])
+// 			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+// 		i++;
+// 	}
+// 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+// }
+
+// int cal_median(int n_elem)
+// {
+//   int median;
+
+//   median = 0;
+//   if ((n_elem % 2) == 0)
+//     median = ((n_elem + 1) / 2);
+//   else
+//     median = (n_elem / 2);
+//   return (median);
+// }
+
 int find_median(int *numbers, int n_elem)
 {
   int i;
   int j;
   int temp;
+  // int median;
 
   i = 1;
   while (i <= n_elem)
@@ -501,6 +547,8 @@ int find_median(int *numbers, int n_elem)
     }
     i++;
   }
+  // median = cal_median(n_elem);
+  // return (numbers[median]);
   return (numbers[n_elem / 2]);
 }
 
@@ -525,17 +573,19 @@ int median(t_list *stack, int size)
     return (median);
 }
 
-void quicksort_reverse(t_list **stack_1, t_list **stack_2, t_list **lst)
+int quicksort_reverse(t_list **stack_1, t_list **stack_2, t_list **lst)
 {
   int pivot;
   int push_count;
   int i;
   int size;
 
+    // printf("Oiiii\n");
   size = ft_lstsize(*stack_1);
   if (size <= 1)
-    return ;
+    return (0);
   pivot = median(*stack_1, size);
+    // printf("Oiiii... %d\n", pivot);
   push_count = 0;
   i = 0;
   while (i < size)
@@ -553,9 +603,15 @@ void quicksort_reverse(t_list **stack_1, t_list **stack_2, t_list **lst)
     }
     i++;
   }
+  // if (push_count == 2 && (*(int *)(*stack_2)->content > *(int *)(*stack_2)->next->content))
+  // {
+  //   swap(stack_2);
+  //   create_stack(lst, "sa\n");
+  // }
+  return (push_count);
 }
 
-void quicksort(t_list **stack_1, t_list **stack_2, t_list **lst)
+int quicksort(t_list **stack_1, t_list **stack_2, t_list **lst)
 {
   int pivot;
   int push_count;
@@ -563,9 +619,11 @@ void quicksort(t_list **stack_1, t_list **stack_2, t_list **lst)
   int size;
 
   size = ft_lstsize(*stack_1);
+    // printf("Oiiii\n");
   if (size <= 1)
-    return ;
+    return (0);
   pivot = median(*stack_1, size);
+    // printf("Oiiii... %d\n", pivot);
   push_count = 0;
   i = 0;
   while (i < size)
@@ -583,16 +641,53 @@ void quicksort(t_list **stack_1, t_list **stack_2, t_list **lst)
     }
     i++;
   }
+  // if (ft_lstsize(*stack_2) <= 3)
+  //   tiny_sort_reverse(stack_2, lst);
+  // else
+  // if (push_count == 2 && (*(int *)(*stack_2)->content < *(int *)(*stack_2)->next->content))
+  // {
+  //   swap(stack_2);
+  //   create_stack(lst, "sb\n");
+  // }
+  // if (ft_lstsize(*stack_1) <= 3)
+  // {
+  //   tiny_sort(stack_1, lst);
+  //   if (push_count < 3)
+  //   {
+  //     while (push_count--)
+  //     {
+  //       push(stack_2, stack_1);
+  //       create_stack(lst, "pa\n");
+  //     }
+  //   }
+  // }
+  return (push_count);
 }
 
 void  ord_stacks(t_list **stack_1, t_list **stack_2, t_list **lst)
 {
   int push_count;
 
+  // push_count = quicksort(stack_1, stack_2, size, lst);
+  // if (size - push_count > 3)
+  //   push_count =
   while (ft_lstsize(*stack_1) > 3)
     quicksort(stack_1, stack_2, lst);
   if (ft_lstsize(*stack_1) <= 3)
     tiny_sort(stack_1, lst);
+  // {
+  //   if (push_count < 3)
+  //   {
+  //     while (push_count--)
+  //     {
+  //       push(stack_2, stack_1);
+  //       create_stack(lst, "pa\n");
+  //     }
+  //   }
+  // }
+  // if (size - push_count <= 3)
+  //   tiny_sort(stack_1, lst);
+  // else
   while (ft_lstsize(*stack_2) > 3)
     quicksort_reverse(stack_2, stack_1, lst);
   if (ft_lstsize(*stack_2) <= 3)
@@ -647,6 +742,7 @@ int main(int argc, char **argv)
         return (1);
       }
       *value = ft_atoi(argv[i]);
+      // printf("%d\n", *value);
       create_stack(&stack_a, value);
       i++;
     }
@@ -734,6 +830,7 @@ int main(int argc, char **argv)
     current = current->next;
   }
 
+
   printf("\n----------MOVES---------\n");
   char  *str;
   char  *str_next;
@@ -777,6 +874,7 @@ int main(int argc, char **argv)
 		free(current->content);
 		current = current->next;
 		free(temp);
+    // printf("limpando no\n");
 	}
   current = stack_b;
   while (current)
@@ -785,6 +883,7 @@ int main(int argc, char **argv)
 		free(current->content);
 		current = current->next;
 		free(temp);
+    // printf("limpando no\n");
 	}
 
   // current = moves;
@@ -797,6 +896,8 @@ int main(int argc, char **argv)
   //   // printf("limpando no\n");
 	// }
 
+  // printf("%s\n%s\n%s\n", argv[1], argv[2], argv[3]);
+  // printf("%d\n%d\n%d\n", ft_atoi(argv[1]), ft_atoi(argv[2]), ft_atoi(argv[3]));
   // free(value);
   // free(argv);
   return (0);
