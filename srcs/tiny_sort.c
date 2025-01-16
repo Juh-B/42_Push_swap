@@ -1,23 +1,14 @@
 #include "../includes/push_swap.h"
 
-void  tiny_sort(t_stack **stack, t_stack **lst)
+void  tiny_sort(t_stack **stack)
 {
 	t_stack	*highest;
 
 	highest = find_highest(*stack);
 	if (*stack == highest)
-  {
-		rotate(stack);
-    ft_stack(lst, "ra\n");
-  }
+    rotate_stack(stack, 'a');
 	else if ((*stack)->next == highest)
-  {
-    rotate_rev(stack);
-    ft_stack(lst, "rra\n");
-  }
+    rotate_rev_stack(stack, 'a');
 	if (*(int *)(*stack)->content > *(int *)(*stack)->next->content)
-  {
-		swap(stack);
-    ft_stack(lst, "sa\n");
-  }
+    swap_stack(stack, 'a');
 }

@@ -1,66 +1,44 @@
 #include "../includes/push_swap.h"
 
-static int verif_number(const char *str)
+static t_stack *initialize_node(void *content)
 {
-  int i;
-  int sign;
-  long number;
+    t_stack *new_node;
 
-  i = 0;
-  sign = 1;
-  number = 0;
-  if (str[i] == '+' || str[i] == '-')
-  {
-    if (str[i] == '-')
-      sign *= -1;
-    i++;
-  }
-  while (ft_isdigit(str[i]))
-  {
-    number = (number * 10) + (str[i] - '0');
-    i++;
-  }
-  number *= sign;
-  if (str[i] == '\0' && (number >= -2147483648 && number <= 2147483647))
-    return (1);
-  else
-    return (0);
+    new_node = malloc(sizeof(t_stack));
+    if (!new_node)
+        return (NULL);
+    new_node->content = content;
+    new_node->next = NULL;
+    new_node->mov_a = 0;
+    new_node->mov_b = 0;
+    new_node->type_mov_a = '\0';
+    new_node->type_mov_b = '\0';
+    return (new_node);
 }
 
-static char  **ft_argv(char **argv)
+static void node_add_back(t_stack **stack, t_stack *new)
 {
-  char  *new_argv;
+    t_stack *temp;
 
-  new_argv = ft_strjoin("0 ", argv[1]);
-  argv = ft_split(new_argv, ' ');
-  free(new_argv);
-  return (argv);
-}
-
-int  create_stack(int argc, char **argv, t_stack **stack_a)
-{
-  int i;
-  int *value;
-
-  if (argc == 2)
-    argv = ft_argv(argv);
-  i = 1;
-  while (argv[i])
-  {
-    if (verif_number(argv[i]))
+    if (!stack || !new)
+        return;
+    if (!*stack)
     {
-      value = malloc(sizeof(int));
-      if (!value)
-      {
-        ft_free(*stack_a);
-        return (2);
-      }
-      *value = ft_atoi(argv[i]);
-      ft_stack(stack_a, value);
+        *stack = new;
+        return;
     }
-    else
-      return (2);
-    i++;
-  }
-  return (3);
+    temp = *stack;
+    while (temp->next)
+        temp = temp->next;
+    temp->next = new;
+}
+
+void create_stack(t_stack **stack, void *content)
+{
+    t_stack *new_node;
+
+    new_node = initialize_node(content);
+    if (!new_node)
+        return;
+    node_add_back(stack, new_node);
 }

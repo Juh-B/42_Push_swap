@@ -18,11 +18,10 @@ SRCS = $(SRCDIR)/push_swap.c\
 	$(SRCDIR)/ft_error.c\
 	$(SRCDIR)/ft_free.c\
 	$(SRCDIR)/ft_lst.c\
+	$(SRCDIR)/ft_rotate.c\
 	$(SRCDIR)/ft_stack.c\
 	$(SRCDIR)/low_or_hig_nbr.c\
-	$(SRCDIR)/mov_cost.c\
-	$(SRCDIR)/mov_stack.c\
-	$(SRCDIR)/mov_total.c\
+	$(SRCDIR)/move_stack.c\
 	$(SRCDIR)/operations.c\
 	$(SRCDIR)/order_by.c\
 	$(SRCDIR)/sort_stacks.c\

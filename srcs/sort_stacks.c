@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-static void  order_final_stack(t_stack **stack_a, t_stack **lst)
+static void  order_final_stack(t_stack **stack_a)
 {
   long  times;
   t_stack  *position;
@@ -11,49 +11,36 @@ static void  order_final_stack(t_stack **stack_a, t_stack **lst)
   while (times > 0)
   {
     if (position->type_mov_a == 'u')
-    {
-      rotate(stack_a);
-      ft_stack(lst, "ra\n");
-    }
+      rotate_stack(stack_a, 'a');
     else
-    {
-      rotate_rev(stack_a);
-      ft_stack(lst, "rra\n");
-    }
+      rotate_rev_stack(stack_a, 'a');
     times--;
   }
 }
 
-void  sort_stacks(t_stack **stack_a, t_stack **stack_b, t_stack **lst)
+void  sort_stacks(t_stack **stack_a, t_stack **stack_b)
 {
   t_stack *node_a;
   t_stack *node_b;
-  long  size;
 
   node_a = NULL;
   node_b = NULL;
-  push(stack_a, stack_b);
-  push(stack_a, stack_b);
-  ft_stack(lst, "pb\n");
-  ft_stack(lst, "pb\n");
+  push_stack(stack_a, stack_b, 'b');
+  push_stack(stack_a, stack_b, 'b');
   while (ft_lst_size(*stack_a) > 3)
   {
     node_a = calc_cost(*stack_a, *stack_b, 'a', 'b');
     node_b = fit_in_b(node_a, *stack_b);
-    ft_move(stack_a, stack_b, node_a, node_b, lst); //arq mov_stack
-    push(stack_a, stack_b);
-    ft_stack(lst, "pb\n");
+    ft_rot(stack_a, stack_b, node_a, node_b);
+    push_stack(stack_a, stack_b, 'b');
   }
-  tiny_sort(stack_a, lst);
-  size = ft_lst_size(*stack_b);
-  while (size > 0)
+  tiny_sort(stack_a);
+  while (ft_lst_size(*stack_b) > 0)
   {
     node_b = calc_cost(*stack_b, *stack_a, 'b', 'a');
     node_a = fit_in_a(node_b, *stack_a);
-    ft_move(stack_a, stack_b, node_a, node_b, lst);
-    push(stack_b, stack_a);
-    ft_stack(lst, "pa\n");
-    size--;
+    ft_rot(stack_a, stack_b, node_a, node_b);
+    push_stack(stack_b, stack_a, 'a');
   }
-  order_final_stack(stack_a, lst);
+  order_final_stack(stack_a);
 }

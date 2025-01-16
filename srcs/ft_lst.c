@@ -1,29 +1,29 @@
 #include "../includes/push_swap.h"
 
-t_stack	*ft_lst_last(t_stack *lst)
+t_stack	*ft_lst_last(t_stack *stack)
 {
 	t_stack	*p;
 
-	if (lst == NULL)
+	if (stack == NULL)
 		return (NULL);
-	while (lst)
+	while (stack)
 	{
-		if (lst->next == NULL)
-			p = lst;
-		lst = lst->next;
+		if (stack->next == NULL)
+			p = stack;
+		stack = stack->next;
 	}
 	return (p);
 }
 
-int	ft_lst_size(t_stack *lst)
+int	ft_lst_size(t_stack *stack)
 {
 	int	size;
 
 	size = 0;
-	while (lst)
+	while (stack)
 	{
 		size++;
-		lst = lst->next;
+		stack = stack->next;
 	}
 	return (size);
 }

@@ -32,13 +32,13 @@ static int verif_order_and_double(t_stack *stack)
   if (verify(stack, 'd'))
   {
     ft_free(stack);
-    printf("Double\n");
+    ft_printf("Double\n");
     return (2);
   }
   if (!verify(stack, 'o'))
   {
     ft_free(stack);
-    printf("Alredy ordered\n");
+    ft_printf("Alredy ordered\n");
     return (0);
   }
   return (3);
@@ -68,7 +68,7 @@ int verifications(int argc, char **argv, t_stack **stack_a)
     else
       return (2);
   }
-  verif_stack = create_stack(argc, argv, stack_a);
+  verif_stack = ft_stack(argc, argv, stack_a);
   if (verif_stack == 2)
       return (2);
   verif_2 = verif_order_and_double(*stack_a);
