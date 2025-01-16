@@ -2,10 +2,10 @@
 
 int main(int argc, char **argv)
 {
-  t_list  *stack_a;
-  t_list  *stack_b;
-  t_list  *moves;
-  t_list  *current;
+  t_stack  *stack_a;
+  t_stack  *stack_b;
+  t_stack  *moves;
+  t_stack  *current;
   int code;
 
   stack_a = NULL;
@@ -19,6 +19,7 @@ int main(int argc, char **argv)
     else
       return (ft_error(code));
   }
+
   current = stack_a;
   printf("...STACK A...\n");
   while (current)

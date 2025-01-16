@@ -1,8 +1,8 @@
 #include "../includes/push_swap.h"
 
-void ft_free(t_list *stack)
+void ft_free(t_stack *stack)
 {
-  t_list *temp;
+  t_stack *temp;
 
 	if (stack == NULL)
 		return ;

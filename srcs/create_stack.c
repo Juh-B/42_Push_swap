@@ -37,7 +37,7 @@ static char  **ft_argv(char **argv)
   return (argv);
 }
 
-int  create_stack(int argc, char **argv, t_list **stack_a)
+int  create_stack(int argc, char **argv, t_stack **stack_a)
 {
   int i;
   int *value;

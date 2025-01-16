@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-void  ft_move(t_list **stack_a, t_list **stack_b, t_list *node_a, t_list *node_b, t_list **lst)
+void  ft_move(t_stack **stack_a, t_stack **stack_b, t_stack *node_a, t_stack *node_b, t_stack **lst)
 {
   long  both;
   long  only_a;

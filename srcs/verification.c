@@ -1,10 +1,10 @@
 #include "../includes/push_swap.h"
 
 
-static int verify(t_list *stack, char type)
+static int verify(t_stack *stack, char type)
 {
   int numb;
-  t_list *temp;
+  t_stack *temp;
 
   numb = 0;
   while (stack)
@@ -28,7 +28,7 @@ static int verify(t_list *stack, char type)
   return (0);
 }
 
-static int verif_order_and_double(t_list *stack)
+static int verif_order_and_double(t_stack *stack)
 {
   if (verify(stack, 'd'))
   {
@@ -55,7 +55,7 @@ static int verif_args(int argc, char **argv)
     return (3);
 }
 
-// int  create_stack(char **argv, t_list *stack_a)
+// int  create_stack(char **argv, t_stack *stack_a)
 // {
 //   int i;
 //   int *value;
@@ -81,7 +81,7 @@ static int verif_args(int argc, char **argv)
 //   return (3);
 // }
 
-int verifications(int argc, char **argv, t_list **stack_a)
+int verifications(int argc, char **argv, t_stack **stack_a)
 {
   int verif_1;
   int verif_2;

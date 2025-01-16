@@ -1,11 +1,11 @@
 
 #include "../includes/push_swap.h"
 
-t_list *fit_in_b(t_list *node_a, t_list *stack_b)
+t_stack *fit_in_b(t_stack *node_a, t_stack *stack_b)
 {
   int nbr;
-  t_list *place;
-  t_list *stack;
+  t_stack *place;
+  t_stack *stack;
 
   place = NULL;
   stack = stack_b;
@@ -34,11 +34,11 @@ t_list *fit_in_b(t_list *node_a, t_list *stack_b)
   return (place);
 }
 
-t_list *fit_in_a(t_list *node_b, t_list *stack_a)
+t_stack *fit_in_a(t_stack *node_b, t_stack *stack_a)
 {
   int nbr;
-  t_list *place;
-  t_list *stack;
+  t_stack *place;
+  t_stack *stack;
 
   place = NULL;
   stack = stack_a;

@@ -14,11 +14,11 @@
 //   ft_lstadd_back(stack, new_node);
 // }
 
-static t_list *ft_lstnew_push(void *content)
+static t_stack *ft_lstnew_push(void *content)
 {
-    t_list *new_node;
+    t_stack *new_node;
 
-    new_node = malloc(sizeof(t_list));
+    new_node = malloc(sizeof(t_stack));
     if (!new_node)
         return (NULL);
     new_node->content = content;
@@ -30,9 +30,9 @@ static t_list *ft_lstnew_push(void *content)
     return (new_node);
 }
 
-static void ft_lstadd_back_push(t_list **lst, t_list *new)
+static void ft_lstadd_back_push(t_stack **lst, t_stack *new)
 {
-    t_list *temp;
+    t_stack *temp;
 
     if (!lst || !new)
         return;
@@ -47,9 +47,9 @@ static void ft_lstadd_back_push(t_list **lst, t_list *new)
     temp->next = new;
 }
 
-void ft_stack(t_list **stack, void *content)
+void ft_stack(t_stack **stack, void *content)
 {
-    t_list *new_node;
+    t_stack *new_node;
 
     new_node = ft_lstnew_push(content);
     if (!new_node)

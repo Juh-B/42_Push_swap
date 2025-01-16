@@ -1,9 +1,9 @@
 #include "../includes/push_swap.h"
 
-t_list	*find_highest(t_list *stack)
+t_stack	*find_highest(t_stack *stack)
 {
 	int				numb;
-	t_list	*highest;
+	t_stack	*highest;
 
 	if (NULL == stack)
 		return (NULL);
@@ -20,10 +20,10 @@ t_list	*find_highest(t_list *stack)
 	return (highest);
 }
 
-t_list	*find_lowest(t_list *stack)
+t_stack	*find_lowest(t_stack *stack)
 {
 	int				numb;
-	t_list	*lowest;
+	t_stack	*lowest;
 
 	if (NULL == stack)
 		return (NULL);

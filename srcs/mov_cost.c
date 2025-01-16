@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-static void  type_mov(t_list *stack, int size, char c)
+static void  type_mov(t_stack *stack, int size, char c)
 {
   int i;
 
@@ -26,13 +26,13 @@ static void  type_mov(t_list *stack, int size, char c)
   }
 }
 
-void  mov_cost(t_list *stack, char c)
+void  mov_cost(t_stack *stack, char c)
 {
   int size;
   int cost;
   int i;
 
-  size = ft_lstsize(stack);
+  size = ft_lst_size(stack);
   cost = 0;
   i = 1;
   type_mov(stack, size, c);

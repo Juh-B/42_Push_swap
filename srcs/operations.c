@@ -1,9 +1,9 @@
 #include "../includes/push_swap.h"
 
-void swap(t_list **stack)
+void swap(t_stack **stack)
 {
-  t_list *first;
-  t_list *second;
+  t_stack *first;
+  t_stack *second;
 
   if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
     return ;
@@ -14,11 +14,11 @@ void swap(t_list **stack)
   *stack = second;
 }
 
-void  push(t_list **stack_orig, t_list **stack_dest)
+void  push(t_stack **stack_orig, t_stack **stack_dest)
 {
-  t_list *orig;
-  t_list *sec_orig;
-  t_list *dest;
+  t_stack *orig;
+  t_stack *sec_orig;
+  t_stack *dest;
 
 
   if (stack_orig == NULL)
@@ -31,26 +31,32 @@ void  push(t_list **stack_orig, t_list **stack_dest)
   *stack_dest = orig;
 }
 
-void rotate(t_list **stack)
+void rotate(t_stack **stack)
 {
-  t_list *first;
-  t_list *second;
-  t_list *last;
+  t_stack *first;
+  t_stack *second;
+  t_stack *last;
+  t_stack *temp;
 
   if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
     return ;
   first = *stack;
   second = first->next;
-  last = ft_lstlast(*stack);
+
+  temp = *stack;
+  while (temp->next)
+      temp = temp->next;
+  last = temp->next;
+  // last = ft_lstlast(*stack);
   first->next = NULL;
   last->next = first;
   *stack = second;
 }
 
-void rotate_rev(t_list **stack)
+void rotate_rev(t_stack **stack)
 {
-  t_list *before_last;
-  t_list *last;
+  t_stack *before_last;
+  t_stack *last;
 
   if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
     return ;

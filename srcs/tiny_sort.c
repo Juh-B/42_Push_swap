@@ -1,8 +1,8 @@
 #include "../includes/push_swap.h"
 
-void  tiny_sort(t_list **stack, t_list **lst)
+void  tiny_sort(t_stack **stack, t_stack **lst)
 {
-	t_list	*highest;
+	t_stack	*highest;
 
 	highest = find_highest(*stack);
 	if (*stack == highest)

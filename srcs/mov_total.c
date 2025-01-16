@@ -1,7 +1,7 @@
 #include "../includes/push_swap.h"
 
 // PROTOTIPADA (MAS TALVEx possa ser static da calc cost)
-long  mov_total(t_list *stack_a, t_list *stack_b)
+long  mov_total(t_stack *stack_a, t_stack *stack_b)
 {
   long  total;
 
