@@ -2,7 +2,6 @@
 #define PUSH_SWAP_H
 
 #include <stdlib.h>
-#include <stdio.h> // TEM QUE TIRAR
 #include "../libft/libft.h"
 
 // Stack Structure
