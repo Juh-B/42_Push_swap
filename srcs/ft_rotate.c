@@ -6,7 +6,7 @@
 /*   By: jcosta-b <jcosta-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 12:44:53 by jcosta-b          #+#    #+#             */
-/*   Updated: 2025/01/29 12:45:46 by jcosta-b         ###   ########.fr       */
+/*   Updated: 2025/01/29 15:21:28 by jcosta-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ static void	rot_b(long only_b, t_stack **stack_b, char c)
 		only_b--;
 	}
 }
-
 
 void	ft_rot(t_stack **st_a, t_stack **st_b, t_stack *n_a, t_stack *n_b)
 {

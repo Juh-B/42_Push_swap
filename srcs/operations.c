@@ -6,7 +6,7 @@
 /*   By: jcosta-b <jcosta-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 12:49:05 by jcosta-b          #+#    #+#             */
-/*   Updated: 2025/01/29 12:49:58 by jcosta-b         ###   ########.fr       */
+/*   Updated: 2025/01/29 15:20:47 by jcosta-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	push(t_stack **stack_orig, t_stack **stack_dest)
 	t_stack	*orig;
 	t_stack	*sec_orig;
 	t_stack	*dest;
-
 
 	if (stack_orig == NULL)
 		return ;

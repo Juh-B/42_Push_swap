@@ -6,7 +6,7 @@
 /*   By: jcosta-b <jcosta-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 12:51:53 by jcosta-b          #+#    #+#             */
-/*   Updated: 2025/01/29 12:52:37 by jcosta-b         ###   ########.fr       */
+/*   Updated: 2025/01/29 15:19:54 by jcosta-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	order_final_stack(t_stack **stack_a)
 	}
 }
 
-void  sort_stacks(t_stack **stack_a, t_stack **stack_b)
+void	sort_stacks(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*node_a;
 	t_stack	*node_b;

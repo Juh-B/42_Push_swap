@@ -6,7 +6,7 @@
 /*   By: jcosta-b <jcosta-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 12:37:38 by jcosta-b          #+#    #+#             */
-/*   Updated: 2025/01/29 13:06:58 by jcosta-b         ###   ########.fr       */
+/*   Updated: 2025/01/29 15:19:05 by jcosta-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	type_mov(t_stack *stack, int size, char c)
 		}
 		i++;
 		stack = stack->next;
-  }
+	}
 }
 
 void	mov_cost(t_stack *stack, char c)
@@ -58,8 +58,6 @@ void	mov_cost(t_stack *stack, char c)
 			cost++;
 		else if (!((i <= (size / 2 + 1)) && (size % 2 != 0)))
 			cost--;
-		// 	cost = cost;
-		// else
 		stack = stack->next;
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: jcosta-b <jcosta-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 12:40:07 by jcosta-b          #+#    #+#             */
-/*   Updated: 2025/01/29 12:40:58 by jcosta-b         ###   ########.fr       */
+/*   Updated: 2025/01/29 15:20:33 by jcosta-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ static void	node_add_back(t_stack **stack, t_stack *new)
 	t_stack	*temp;
 
 	if (!stack || !new)
-		return;
+		return ;
 	if (!*stack)
 	{
 		*stack = new;
-		return;
+		return ;
 	}
 	temp = *stack;
 	while (temp->next)
@@ -51,6 +51,6 @@ void	create_stack(t_stack **stack, void *content)
 
 	new_node = initialize_node(content);
 	if (!new_node)
-		return;
+		return ;
 	node_add_back(stack, new_node);
 }
