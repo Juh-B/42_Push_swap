@@ -1,16 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcosta-b <jcosta-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/29 15:22:37 by jcosta-b          #+#    #+#             */
+/*   Updated: 2025/01/29 15:23:50 by jcosta-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include <stdlib.h>
-#include "../libft/libft.h"
+# include <stdlib.h>
+# include "../libft/libft.h"
 
-typedef struct	s_stack
+typedef struct s_stack
 {
-	void	*content;
-	long	mov_a;
-	long	mov_b;
-	char	type_mov_a;
-	char	type_mov_b;
+	void			*content;
+	long			mov_a;
+	long			mov_b;
+	char			type_mov_a;
+	char			type_mov_b;
 	struct s_stack	*next;
 }	t_stack;
 
