@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   low_or_hig_nbr.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcosta-b <jcosta-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/29 12:47:32 by jcosta-b          #+#    #+#             */
+/*   Updated: 2025/01/29 12:47:57 by jcosta-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 t_stack	*find_highest(t_stack *stack)
 {
-	int				numb;
+	int		numb;
 	t_stack	*highest;
 
 	if (NULL == stack)
@@ -22,7 +34,7 @@ t_stack	*find_highest(t_stack *stack)
 
 t_stack	*find_lowest(t_stack *stack)
 {
-	int				numb;
+	int		numb;
 	t_stack	*lowest;
 
 	if (NULL == stack)
