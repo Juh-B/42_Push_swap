@@ -4,22 +4,20 @@
 #include <stdlib.h>
 #include "../libft/libft.h"
 
-// Stack Structure
 typedef struct	s_stack
 {
-	void *content;
-	long mov_a;
-	long mov_b;
-	char type_mov_a;
-	char type_mov_b;
-	struct s_stack *next;
+	void	*content;
+	long	mov_a;
+	long	mov_b;
+	char	type_mov_a;
+	char	type_mov_b;
+	struct s_stack	*next;
 }	t_stack;
 
-// Functions
-int	ft_error(int type);
-int	ft_stack(int argc, char **argv, t_stack **stack_a);
-int	ft_lst_size(t_stack *stack);
-int	verifications(int argc, char **argv, t_stack **stack_a);
+int		ft_error(int type);
+int		ft_stack(int argc, char **argv, t_stack **stack_a);
+int		ft_lst_size(t_stack *stack);
+int		verifications(int argc, char **argv, t_stack **stack_a);
 
 void	create_stack(t_stack **stack, void *content);
 void	ft_free(t_stack *stack);
