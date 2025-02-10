@@ -65,14 +65,14 @@ int	ft_stack(int argc, char **argv, t_stack **stack_a)
 			if (!value)
 			{
 				ft_free(*stack_a);
-				return (2);
+				return (1);
 			}
 			*value = ft_atoi(argv[i]);
 			create_stack(stack_a, value);
 		}
 		else
-			return (2);
+			return (1);
 		i++;
 	}
-	return (3);
+	return (2);
 }

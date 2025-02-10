@@ -26,7 +26,6 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-int		ft_error(int type);
 int		ft_stack(int argc, char **argv, t_stack **stack_a);
 int		ft_lst_size(t_stack *stack);
 int		verifications(int argc, char **argv, t_stack **stack_a);

@@ -21,14 +21,19 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	code = verifications(argc, argv, &stack_a);
-	if (code != 3)
-	{
-		if (code == 0)
-			return (0);
-		else
-			return (ft_error(code));
-	}
+	if (code != 2)
+    return (code);
 	order_by(&stack_a, &stack_b);
+
+  // t_stack  *current;
+  // current = stack_a;
+  // ft_printf("\n... Stack...\n");
+  // while (current)
+  // {
+  //   ft_printf("%d\n", *(int *)current->content);
+  //   current = current->next;
+  // }
+
 	ft_free(stack_a);
 	return (0);
 }

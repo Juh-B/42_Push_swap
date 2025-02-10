@@ -44,51 +44,40 @@ static int	verif_order_and_double(t_stack *stack)
 	if (verify(stack, 'd'))
 	{
 		ft_free(stack);
-		ft_printf("Double\n");
-		return (2);
+		ft_printf("You have duplicate numbers on your stack.\n");
+		return (1);
 	}
 	if (!verify(stack, 'o'))
 	{
 		ft_free(stack);
 		return (0);
 	}
-	return (3);
+	return (2);
 }
 
-static int	verif_args(int argc, char **argv)
+static int	ft_error(void)
 {
-	if (argc == 1)
-		return (1);
-	else if (argc == 2 && !argv[1][0])
-		return (2);
-	else
-		return (3);
+  ft_printf("Error\n");
+  return (1);
 }
+
 
 int	verifications(int argc, char **argv, t_stack **stack_a)
 {
-	int	verif_1;
-	int	verif_2;
+	int	verif_param;
 	int	verif_stack;
 
-	verif_1 = verif_args(argc, argv);
-	if (verif_1 != 3)
-	{
-		if (verif_1 == 1)
-			return (1);
-		else
-			return (2);
-	}
+	if (argc == 1)
+		return (0);
+	else if (argc == 2 && !argv[1][0])
+		return (ft_error());
 	verif_stack = ft_stack(argc, argv, stack_a);
-	if (verif_stack == 2)
-		return (2);
-	verif_2 = verif_order_and_double(*stack_a);
-	if (verif_2 != 3)
-	{
-		if (verif_2 == 2)
-			return (2);
-		else
-			return (0);
-	}
-	return (3);
+	if (verif_stack == 1)
+		return (ft_error());
+	verif_param = verif_order_and_double(*stack_a);
+	if (verif_param == 0)
+		return (0);
+  else if (verif_param == 1)
+    return (ft_error());
+	return (2);
 }
