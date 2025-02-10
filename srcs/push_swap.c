@@ -6,7 +6,7 @@
 /*   By: jcosta-b <jcosta-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 12:50:50 by jcosta-b          #+#    #+#             */
-/*   Updated: 2025/01/29 12:51:36 by jcosta-b         ###   ########.fr       */
+/*   Updated: 2025/02/10 11:50:16 by jcosta-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,8 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	code = verifications(argc, argv, &stack_a);
 	if (code != 2)
-    return (code);
+		return (code);
 	order_by(&stack_a, &stack_b);
-
-  // t_stack  *current;
-  // current = stack_a;
-  // ft_printf("\n... Stack...\n");
-  // while (current)
-  // {
-  //   ft_printf("%d\n", *(int *)current->content);
-  //   current = current->next;
-  // }
-
 	ft_free(stack_a);
 	return (0);
 }

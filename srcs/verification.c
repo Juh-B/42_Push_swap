@@ -6,7 +6,7 @@
 /*   By: jcosta-b <jcosta-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 12:53:45 by jcosta-b          #+#    #+#             */
-/*   Updated: 2025/01/29 13:26:35 by jcosta-b         ###   ########.fr       */
+/*   Updated: 2025/02/10 11:51:13 by jcosta-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,9 @@ static int	verif_order_and_double(t_stack *stack)
 
 static int	ft_error(void)
 {
-  ft_printf("Error\n");
-  return (1);
+	ft_printf("Error\n");
+	return (1);
 }
-
 
 int	verifications(int argc, char **argv, t_stack **stack_a)
 {
@@ -77,7 +76,7 @@ int	verifications(int argc, char **argv, t_stack **stack_a)
 	verif_param = verif_order_and_double(*stack_a);
 	if (verif_param == 0)
 		return (0);
-  else if (verif_param == 1)
-    return (ft_error());
+	else if (verif_param == 1)
+		return (ft_error());
 	return (2);
 }
