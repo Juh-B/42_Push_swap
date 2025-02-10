@@ -1,16 +1,12 @@
-# Project name
 NAME = push_swap
 
-# Directories
 SRCDIR = srcs
 OBJDIR = objs
 INCDIR = includes
 LIBFT_DIR = libft
 
-# Libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-# .c files
 SRCS = $(SRCDIR)/push_swap.c\
 	$(SRCDIR)/calc_cost.c\
 	$(SRCDIR)/create_stack.c\
@@ -27,14 +23,12 @@ SRCS = $(SRCDIR)/push_swap.c\
 	$(SRCDIR)/tiny_sort.c\
 	$(SRCDIR)/verification.c\
 
-# Object files
 OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
-# Compiler and Flags
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-# Compilation
+
 all: $(OBJDIR) $(NAME)
 
 $(OBJDIR):
