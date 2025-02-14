@@ -75,3 +75,4 @@ void	rotate_rev(t_stack **stack)
 	last->next = *stack;
 	*stack = last;
 }
+
