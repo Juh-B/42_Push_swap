@@ -22,7 +22,11 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	code = verifications(argc, argv, &stack_a);
 	if (code != 2)
+  {
+    if (stack_a != NULL)
+      ft_free(stack_a);
     return (code);
+  }
 	order_by(&stack_a, &stack_b);
 
   // t_stack  *current;

@@ -42,16 +42,9 @@ static int	verify(t_stack *stack, char type)
 static int	verif_order_and_double(t_stack *stack)
 {
 	if (verify(stack, 'd'))
-	{
-		ft_free(stack);
-		ft_printf("You have duplicate numbers on your stack.\n");
 		return (1);
-	}
 	if (!verify(stack, 'o'))
-	{
-		ft_free(stack);
 		return (0);
-	}
 	return (2);
 }
 
@@ -67,11 +60,12 @@ int	verifications(int argc, char **argv, t_stack **stack_a)
 	int	verif_param;
 	int	verif_stack;
 
-	if (argc == 1)
-		return (0);
+  if (argc == 1)
+    return (0);
 	else if (argc == 2 && !argv[1][0])
 		return (ft_error());
-	verif_stack = ft_stack(argc, argv, stack_a);
+	else
+	  verif_stack = ft_stack(argc, argv, stack_a);
 	if (verif_stack == 1)
 		return (ft_error());
 	verif_param = verif_order_and_double(*stack_a);
