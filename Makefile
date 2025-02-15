@@ -1,15 +1,12 @@
-# Project name
 NAME = push_swap
 NAME_BONUS = checker
 
-# Directories
 SRCDIR = srcs
 OBJDIR = objs
 INCDIR = includes
 LIBFT_DIR = libft
 BONUSDIR = bonus
 
-# Libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 # Compiler and Flags
