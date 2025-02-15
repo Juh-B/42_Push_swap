@@ -25,6 +25,10 @@ typedef struct s_list
   struct s_list	*next;
 }					t_list;
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif
+
 // First part
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -82,11 +86,15 @@ int		ft_lstsize(t_list *lst);
 
 // Printf
 int		ft_printf(const char *fmt_str, ...);
+
 size_t	printf_putchar(char c);
 size_t	printf_putstr(char *s);
 size_t	printf_putnbr(int n);
 size_t	printf_putnbr_unsig(unsigned int n);
 size_t	printf_puthex(unsigned long n, const char base_specifier);
 size_t	printf_putptr(va_list args, char c);
+
+// Get Next Line
+char	*get_next_line(int fd);
 
 #endif
