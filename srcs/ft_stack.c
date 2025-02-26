@@ -6,7 +6,7 @@
 /*   By: jcosta-b <jcosta-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 12:46:09 by jcosta-b          #+#    #+#             */
-/*   Updated: 2025/01/29 12:47:09 by jcosta-b         ###   ########.fr       */
+/*   Updated: 2025/02/26 16:38:24 by jcosta-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,32 +49,32 @@ static char	**ft_argv(char **argv)
 	return (argv);
 }
 
-static void ft_free_array(char **array)
+static void	ft_free_array(char **array)
 {
-  int i;
+	int	i;
 
-  i = 0;
-  while (array[i])
-  {
-    free(array[i]);
-    i++;
-  }
-  free(array);
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }
 
-static int new_stack(char *argv, t_stack **stack_a)
+static int	new_stack(char *argv, t_stack **stack_a)
 {
-  int	*value;
+	int	*value;
 
-  value = malloc(sizeof(int));
-  if (!value)
-  {
-    ft_free(*stack_a);
-    return (1);
-  }
-  *value = ft_atoi(argv);
+	value = malloc(sizeof(int));
+	if (!value)
+	{
+		ft_free(*stack_a);
+		return (1);
+	}
+	*value = ft_atoi(argv);
 	create_stack(stack_a, value);
-  return (0);
+	return (0);
 }
 
 int	ft_stack(int argc, char **argv, t_stack **stack_a)
@@ -88,14 +88,19 @@ int	ft_stack(int argc, char **argv, t_stack **stack_a)
 	{
 		if (verif_number(argv[i]))
 		{
-      if (new_stack(argv[i], stack_a))
-        return (1);
+			if (new_stack(argv[i], stack_a))
+				return (1);
+		}
+		else if (argc == 2)
+		{
+			ft_free_array(argv);
+			return (1);
 		}
 		else
 			return (1);
 		i++;
 	}
-  if (argc == 2)
-    ft_free_array(argv);
-  return (2);
+	if (argc == 2)
+		ft_free_array(argv);
+	return (2);
 }

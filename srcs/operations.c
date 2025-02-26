@@ -6,7 +6,7 @@
 /*   By: jcosta-b <jcosta-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 12:49:05 by jcosta-b          #+#    #+#             */
-/*   Updated: 2025/01/29 15:20:47 by jcosta-b         ###   ########.fr       */
+/*   Updated: 2025/02/26 11:08:51 by jcosta-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,3 @@ void	rotate_rev(t_stack **stack)
 	last->next = *stack;
 	*stack = last;
 }
-
