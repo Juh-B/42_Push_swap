@@ -9,31 +9,24 @@ BONUSDIR = bonus
 
 LIBFT = $(LIBFT_DIR)/libft.a
 
-# Compiler and Flags
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-# # .c files
 SRCS = push_swap.c calc_cost.c create_stack.c fit_in.c ft_free.c \
-       ft_lst.c ft_rotate.c ft_stack.c low_or_hig_nbr.c move_stack.c \
-       operations.c order_by.c sort_stacks.c tiny_sort.c verification.c
+		ft_lst.c ft_rotate.c ft_stack.c low_or_hig_nbr.c move_stack.c \
+		operations.c order_by.c sort_stacks.c tiny_sort.c verification.c
 
-SRC_BONUS = checker.c checker_extra_bonus.c create_stack_bonus.c \
-						get_command_bonus.c move_stack_bonus.c operations_bonus.c \
-						verif_args_bonus.c verif_stack_bonus.c
+SRC_BONUS = checker_bonus.c checker_extra_bonus.c create_stack_bonus.c \
+			get_command_bonus.c move_stack_bonus.c operations_bonus.c \
+			verif_args_bonus.c verif_stack_bonus.c
 
-# Object files
-# OBJS = $(SRCS:%.c=$(OBJDIR)/%.o)
-# OBJ_BONUS = $(SRC_BONUS:%.c=$(OBJDIR)/%.o)
 
 OBJS = $(SRCS:.c=.o)
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
-# Cores ANSI
-GREEN  = \033[1;32m
-RESET  = \033[0m
+GREEN = \033[1;32m
+RESET = \033[0m
 
-# Compilation
 all: $(OBJDIR) $(NAME)
 
 bonus: $(OBJDIR) $(NAME_BONUS)
